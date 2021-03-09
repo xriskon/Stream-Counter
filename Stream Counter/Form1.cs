@@ -15,6 +15,7 @@ namespace Stream_Counter
     {
         bool format;
         int outSeconds;
+        string timeLeftText = "Time left: ";
 
         public Form1()
         {
@@ -26,8 +27,24 @@ namespace Stream_Counter
             if (outSeconds<=0)
             {
                 timer1.Stop();
+                if (format)
+                    hours.Enabled = true;
+                else
+                    hours.Enabled = false;
+                minutes.Enabled = true;
+                seconds.Enabled = true;
+                minutesRadio.Enabled = true;
+                hoursRadio.Enabled = true;
+                endingTitle.Enabled = true;
                 outSeconds = 0;
-                StreamWriter sw = new StreamWriter("D:\\Test3.txt", false, Encoding.ASCII);
+                hours.Value = 0;
+                minutes.Value = 0;
+                seconds.Value = 0;
+                if(format)
+                    timeLeft.Text = timeLeftText + "00:00:00";
+                else
+                    timeLeft.Text = timeLeftText + "00:00";
+                StreamWriter sw = new StreamWriter("streamCounterOutput.txt", false, Encoding.ASCII);
                 sw.Write(endingTitle.Text);
                 sw.Close();
             }
@@ -37,7 +54,6 @@ namespace Stream_Counter
                     formatTime1(outSeconds);
                 else
                     formatTime2(outSeconds);
-                progressBar.PerformStep();
                 outSeconds--;
             }
         }
@@ -45,7 +61,12 @@ namespace Stream_Counter
         private void startButton_Click(object sender, EventArgs e)
         {            
             calcTime();
-            progressBar.Maximum = outSeconds;
+            hours.Enabled = false;
+            minutes.Enabled = false;
+            seconds.Enabled = false;
+            endingTitle.Enabled = false;
+            minutesRadio.Enabled = false;
+            hoursRadio.Enabled = false;
             timer1.Start();
             stopButton.Enabled = true;
             startButton.Enabled = false;
@@ -54,7 +75,23 @@ namespace Stream_Counter
         private void stopButton_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            StreamWriter sw = new StreamWriter("D:\\Test3.txt", false, Encoding.ASCII);
+            if(format)
+                hours.Enabled = true;
+            else
+                hours.Enabled = false;
+            minutes.Enabled = true;
+            seconds.Enabled = true;
+            endingTitle.Enabled = true;
+            minutesRadio.Enabled = true;
+            hoursRadio.Enabled = true;
+            hours.Value = 0;
+            minutes.Value = 0;
+            seconds.Value = 0;
+            if (format)
+                timeLeft.Text = timeLeftText + "00:00:00";
+            else
+                timeLeft.Text = timeLeftText + "00:00";
+            StreamWriter sw = new StreamWriter("streamCounterOutput.txt", false, Encoding.ASCII);
             sw.Write(endingTitle.Text);
             sw.Close();
             outSeconds = 0;
@@ -67,6 +104,7 @@ namespace Stream_Counter
             hours.Enabled = false;
             hours.Value = 0;
             format = false;
+            timeLeft.Text = timeLeftText + "00:00";
         }
 
         private void hhRadio(object sender, EventArgs e)
@@ -74,6 +112,7 @@ namespace Stream_Counter
             hours.Enabled = true;
             hours.Value = 0;
             format = true;
+            timeLeft.Text = timeLeftText + "00:00:00";
         }
 
         public void calcTime()
@@ -86,11 +125,11 @@ namespace Stream_Counter
 
         public void formatTime1(int _time)
         {
-            StreamWriter sw = new StreamWriter("D:\\Test3.txt", false, Encoding.ASCII);
+            StreamWriter sw = new StreamWriter("streamCounterOutput.txt", false, Encoding.ASCII);
             string _hours = (_time / 3600).ToString();
             int _remTime = _time - Convert.ToInt32(_hours) * 3600;
             string _minutes = (_remTime / 60).ToString();
-            string _seconds = (_time - Convert.ToInt32(_minutes) * 60).ToString();
+            string _seconds = (_remTime - Convert.ToInt32(_minutes) * 60).ToString();
 
             if (Convert.ToInt32(_hours) < 10)
                 _hours = "0" + _hours;
@@ -99,13 +138,14 @@ namespace Stream_Counter
             if (Convert.ToInt32(_seconds) < 10)
                 _seconds = "0" + _seconds;
             string outputTime = _hours + ":" + _minutes + ":" + _seconds;
+            timeLeft.Text = timeLeftText + outputTime;
             sw.Write(outputTime);
             sw.Close();
         }
 
         public void formatTime2(int _time)
         {
-            StreamWriter sw = new StreamWriter("D:\\Test3.txt", false, Encoding.ASCII);
+            StreamWriter sw = new StreamWriter("streamCounterOutput.txt", false, Encoding.ASCII);
             string _minutes = (_time / 60).ToString();
             string _seconds = (_time - Convert.ToInt32(_minutes) * 60).ToString();
             if (Convert.ToInt32(_minutes) < 10)
@@ -113,6 +153,7 @@ namespace Stream_Counter
             if (Convert.ToInt32(_seconds) < 10)
                 _seconds = "0" + _seconds;
             string outputTime = _minutes + ":" + _seconds;
+            timeLeft.Text = timeLeftText + outputTime;
             sw.Write(outputTime);
             sw.Close();
         }

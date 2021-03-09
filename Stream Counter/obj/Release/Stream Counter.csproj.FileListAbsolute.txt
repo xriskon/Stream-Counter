@@ -1,0 +1,9 @@
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Release\Stream Counter.exe.config
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Release\Stream Counter.exe
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Release\Stream Counter.pdb
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Release\Stream_Counter.Form1.resources
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Release\Stream_Counter.Properties.Resources.resources
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Release\Stream Counter.csproj.GenerateResource.cache
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Release\Stream Counter.csproj.CoreCompileInputs.cache
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Release\Stream Counter.exe
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Release\Stream Counter.pdb

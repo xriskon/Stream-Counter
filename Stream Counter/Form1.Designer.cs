@@ -48,20 +48,22 @@ namespace Stream_Counter
             this.endingTitle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.timeLeft = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seconds)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(90, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(305, 90);
             this.pictureBox1.TabIndex = 3;
@@ -71,7 +73,7 @@ namespace Stream_Counter
             // 
             this.startButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(90, 282);
+            this.startButton.Location = new System.Drawing.Point(31, 282);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(140, 35);
             this.startButton.TabIndex = 4;
@@ -84,7 +86,7 @@ namespace Stream_Counter
             this.stopButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.stopButton.Enabled = false;
             this.stopButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopButton.Location = new System.Drawing.Point(255, 282);
+            this.stopButton.Location = new System.Drawing.Point(210, 282);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(140, 35);
             this.stopButton.TabIndex = 4;
@@ -205,11 +207,10 @@ namespace Stream_Counter
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.minutesRadio);
             this.panel1.Controls.Add(this.hoursRadio);
-            this.panel1.Location = new System.Drawing.Point(62, 117);
+            this.panel1.Location = new System.Drawing.Point(9, 115);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 100);
@@ -218,14 +219,13 @@ namespace Stream_Counter
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.hours);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.seconds);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.minutes);
-            this.panel2.Location = new System.Drawing.Point(215, 117);
+            this.panel2.Location = new System.Drawing.Point(161, 115);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(211, 100);
             this.panel2.TabIndex = 12;
@@ -233,16 +233,16 @@ namespace Stream_Counter
             // endingTitle
             // 
             this.endingTitle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endingTitle.Location = new System.Drawing.Point(62, 248);
+            this.endingTitle.Location = new System.Drawing.Point(9, 246);
             this.endingTitle.Name = "endingTitle";
-            this.endingTitle.Size = new System.Drawing.Size(364, 23);
+            this.endingTitle.Size = new System.Drawing.Size(363, 23);
             this.endingTitle.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 226);
+            this.label5.Location = new System.Drawing.Point(12, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 19);
             this.label5.TabIndex = 14;
@@ -253,21 +253,33 @@ namespace Stream_Counter
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // progressBar
+            // timeLeft
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 327);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(460, 23);
-            this.progressBar.Step = 1;
-            this.progressBar.TabIndex = 15;
+            this.timeLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timeLeft.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLeft.Location = new System.Drawing.Point(0, 0);
+            this.timeLeft.Name = "timeLeft";
+            this.timeLeft.Size = new System.Drawing.Size(363, 34);
+            this.timeLeft.TabIndex = 16;
+            this.timeLeft.Text = "Time left: 00:00";
+            this.timeLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.Controls.Add(this.timeLeft);
+            this.panel3.Location = new System.Drawing.Point(9, 330);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(363, 34);
+            this.panel3.TabIndex = 17;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(484, 361);
-            this.Controls.Add(this.progressBar);
+            this.ClientSize = new System.Drawing.Size(384, 371);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.endingTitle);
             this.Controls.Add(this.panel2);
@@ -279,8 +291,8 @@ namespace Stream_Counter
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 400);
-            this.MinimumSize = new System.Drawing.Size(500, 400);
+            this.MaximumSize = new System.Drawing.Size(400, 410);
+            this.MinimumSize = new System.Drawing.Size(400, 410);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stream Counter";
@@ -292,6 +304,7 @@ namespace Stream_Counter
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,7 +328,8 @@ namespace Stream_Counter
         private System.Windows.Forms.TextBox endingTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label timeLeft;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
