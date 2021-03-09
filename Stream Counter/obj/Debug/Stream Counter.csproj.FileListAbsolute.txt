@@ -8,3 +8,13 @@ D:\Projects\C#\Stream Counter\Stream Counter\obj\Debug\Stream Counter.csproj.Gen
 D:\Projects\C#\Stream Counter\Stream Counter\obj\Debug\Stream Counter.csproj.CoreCompileInputs.cache
 D:\Projects\C#\Stream Counter\Stream Counter\obj\Debug\Stream Counter.exe
 D:\Projects\C#\Stream Counter\Stream Counter\obj\Debug\Stream Counter.pdb
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Stream Counter.exe.config
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Stream Counter.exe
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Stream Counter.pdb
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csprojAssemblyReference.cache
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Form1.resources
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Properties.Resources.resources
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csproj.GenerateResource.cache
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csproj.CoreCompileInputs.cache
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.exe
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.pdb

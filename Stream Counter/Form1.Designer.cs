@@ -29,8 +29,8 @@ namespace Stream_Counter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.startButton = new System.Windows.Forms.Button();
             this.stopButton = new System.Windows.Forms.Button();
@@ -41,30 +41,21 @@ namespace Stream_Counter
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.hours = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.minutes = new System.Windows.Forms.NumericUpDown();
+            this.seconds = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.endingTitle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seconds)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // progressBar
-            // 
-            this.progressBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.progressBar.Location = new System.Drawing.Point(12, 324);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(460, 25);
-            this.progressBar.Step = 1;
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar.TabIndex = 2;
-            this.progressBar.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // pictureBox1
             // 
@@ -75,26 +66,25 @@ namespace Stream_Counter
             this.pictureBox1.Size = new System.Drawing.Size(305, 90);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // startButton
             // 
             this.startButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(90, 278);
+            this.startButton.Location = new System.Drawing.Point(90, 282);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(140, 35);
             this.startButton.TabIndex = 4;
             this.startButton.Text = "Start Counter";
             this.startButton.UseVisualStyleBackColor = true;
-            this.startButton.Click += new System.EventHandler(this.button1_Click);
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // stopButton
             // 
             this.stopButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.stopButton.Enabled = false;
             this.stopButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopButton.Location = new System.Drawing.Point(255, 278);
+            this.stopButton.Location = new System.Drawing.Point(255, 282);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(140, 35);
             this.stopButton.TabIndex = 4;
@@ -114,7 +104,7 @@ namespace Stream_Counter
             this.minutesRadio.TabStop = true;
             this.minutesRadio.Text = "mm:ss";
             this.minutesRadio.UseVisualStyleBackColor = true;
-            this.minutesRadio.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.minutesRadio.CheckedChanged += new System.EventHandler(this.mmRadio);
             // 
             // label1
             // 
@@ -137,7 +127,7 @@ namespace Stream_Counter
             this.hoursRadio.TabIndex = 5;
             this.hoursRadio.Text = "hh:mm:ss";
             this.hoursRadio.UseVisualStyleBackColor = true;
-            this.hoursRadio.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.hoursRadio.CheckedChanged += new System.EventHandler(this.hhRadio);
             // 
             // label2
             // 
@@ -181,35 +171,35 @@ namespace Stream_Counter
             this.hours.TabIndex = 9;
             this.hours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDown2
+            // minutes
             // 
-            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(96, 40);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.minutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.minutes.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minutes.Location = new System.Drawing.Point(96, 40);
+            this.minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(101, 23);
-            this.numericUpDown2.TabIndex = 9;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.minutes.Name = "minutes";
+            this.minutes.Size = new System.Drawing.Size(101, 23);
+            this.minutes.TabIndex = 9;
+            this.minutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDown3
+            // seconds
             // 
-            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown3.Location = new System.Drawing.Point(96, 67);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.seconds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.seconds.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seconds.Location = new System.Drawing.Point(96, 67);
+            this.seconds.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(101, 23);
-            this.numericUpDown3.TabIndex = 9;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.seconds.Name = "seconds";
+            this.seconds.Size = new System.Drawing.Size(101, 23);
+            this.seconds.TabIndex = 9;
+            this.seconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -219,7 +209,7 @@ namespace Stream_Counter
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.minutesRadio);
             this.panel1.Controls.Add(this.hoursRadio);
-            this.panel1.Location = new System.Drawing.Point(62, 112);
+            this.panel1.Location = new System.Drawing.Point(62, 117);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 100);
@@ -232,32 +222,44 @@ namespace Stream_Counter
             this.panel2.Controls.Add(this.hours);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.numericUpDown3);
+            this.panel2.Controls.Add(this.seconds);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.numericUpDown2);
-            this.panel2.Location = new System.Drawing.Point(215, 112);
+            this.panel2.Controls.Add(this.minutes);
+            this.panel2.Location = new System.Drawing.Point(215, 117);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(211, 100);
             this.panel2.TabIndex = 12;
             // 
-            // textBox1
+            // endingTitle
             // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(62, 244);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(364, 23);
-            this.textBox1.TabIndex = 13;
+            this.endingTitle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endingTitle.Location = new System.Drawing.Point(62, 248);
+            this.endingTitle.Name = "endingTitle";
+            this.endingTitle.Size = new System.Drawing.Size(364, 23);
+            this.endingTitle.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 222);
+            this.label5.Location = new System.Drawing.Point(58, 226);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 19);
             this.label5.TabIndex = 14;
             this.label5.Text = "Timer end title";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(12, 327);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(460, 23);
+            this.progressBar.Step = 1;
+            this.progressBar.TabIndex = 15;
             // 
             // Form1
             // 
@@ -265,14 +267,14 @@ namespace Stream_Counter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.endingTitle);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.progressBar);
             this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -282,11 +284,10 @@ namespace Stream_Counter
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stream Counter";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seconds)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -297,8 +298,6 @@ namespace Stream_Counter
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button stopButton;
@@ -309,12 +308,14 @@ namespace Stream_Counter
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown hours;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown minutes;
+        private System.Windows.Forms.NumericUpDown seconds;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox endingTitle;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 
