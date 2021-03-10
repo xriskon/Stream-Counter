@@ -1,4 +1,4 @@
-# Stream Counter
+# <img src="https://i.imgur.com/bRSGZpE.png" alt="logo" width="25"/> Stream Counter
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/rageCode153/Stream-Counter) ![GitHub repo size](https://img.shields.io/github/repo-size/rageCode153/Stream-Counter) ![GitHub top language](https://img.shields.io/github/languages/top/rageCode153/Stream-Counter) ![GitHub](https://img.shields.io/github/license/rageCode153/Stream-Counter)
 
