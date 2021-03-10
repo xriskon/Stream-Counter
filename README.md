@@ -1,9 +1,11 @@
 <p align=center>
- ![Logo](https://i.imgur.com/hoCNh5W.png)
+ <img src="https://i.imgur.com/hoCNh5W.png"/>
 </p>
 
 <p align=center>
-![GitHub last commit](https://img.shields.io/github/last-commit/rageCode153/Stream-Counter) ![GitHub top language](https://img.shields.io/github/languages/top/rageCode153/Stream-Counter?color=orange) ![GitHub](https://img.shields.io/github/license/rageCode153/Stream-Counter?color=blue)
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rageCode153/Stream-Counter">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/rageCode153/Stream-Counter?color=orange">
+ <img alt="GitHub" src="https://img.shields.io/github/license/rageCode153/Stream-Counter?color=blue">
 </p>
 
 Stream Counter is designed to be used mainly by streamers. A common use is for a Starting Soon scene inside any broadcasting software(e.g. OBS, XSplit), for a countdown timer for starting the stream.
