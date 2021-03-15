@@ -29,3 +29,5 @@ D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodeP
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csproj.CopyComplete
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Main.resources
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Settings.resources
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Newtonsoft.Json.xml

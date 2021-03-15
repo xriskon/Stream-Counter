@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Newtonsoft.Json;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,20 +15,30 @@ namespace Stream_Counter
 {
     public partial class Settings : Form
     {
+        private string pathLocation;
+
         public Settings()
         {
             InitializeComponent();
         }
 
-        private void Settings_Load(object sender, EventArgs e)
+        public void Settings_Load(object sender, EventArgs e)
         {
             string path = Directory.GetCurrentDirectory();
             pathText.Text = path;
+            pathLocation = path;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {            
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            saveToFile();
             this.Close();
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            var output = readFromFile();
+            pathText.Text = output.directory;
         }
 
         private void folderBtn_Click(object sender, EventArgs e)
@@ -37,7 +48,36 @@ namespace Stream_Counter
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 pathText.Text = dialog.FileName;
+                pathLocation = dialog.FileName;
             }
+        }
+
+        private void saveToFile()
+        {
+            settingsFile file = new settingsFile();
+            file.directory = pathLocation;
+            file.isDarkMode = false;
+
+            string output = JsonConvert.SerializeObject(file);
+
+            StreamWriter outSettings = new StreamWriter("settings.json", false);
+            outSettings.Write(output);
+            outSettings.Close();
+        }
+
+        public settingsFile readFromFile()
+        {
+            string output = File.ReadAllText("settings.json");
+
+            settingsFile deserializedProduct = JsonConvert.DeserializeObject<settingsFile>(output);
+            return deserializedProduct;
+        }
+
+        public class settingsFile
+        {
+            public string directory;
+            public bool isDarkMode;
+
         }
     }
 }
