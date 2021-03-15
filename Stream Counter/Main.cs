@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Stream_Counter
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         bool format;
         int outSeconds;
         string timeLeftText = "Time left: ";
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }
@@ -56,6 +57,17 @@ namespace Stream_Counter
                     formatTime2(outSeconds);
                 outSeconds--;
             }
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            Settings settingsForm = new Settings();
+            settingsForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -156,6 +168,11 @@ namespace Stream_Counter
             timeLeft.Text = timeLeftText + outputTime;
             sw.Write(outputTime);
             sw.Close();
+        }
+
+        public void saveSettings()
+        {
+
         }
     }
 }

@@ -12,9 +12,20 @@ D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Stream Counter.exe.config
 D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Stream Counter.exe
 D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Stream Counter.pdb
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csprojAssemblyReference.cache
-D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Form1.resources
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Properties.Resources.resources
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csproj.GenerateResource.cache
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csproj.CoreCompileInputs.cache
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.exe
 D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.pdb
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+D:\Projects\C#\Stream-Counter\Stream Counter\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream Counter.csproj.CopyComplete
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Main.resources
+D:\Projects\C#\Stream-Counter\Stream Counter\obj\Debug\Stream_Counter.Settings.resources

@@ -1,7 +1,7 @@
 ﻿
 namespace Stream_Counter
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Stream_Counter
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.startButton = new System.Windows.Forms.Button();
             this.stopButton = new System.Windows.Forms.Button();
@@ -50,6 +50,7 @@ namespace Stream_Counter
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timeLeft = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.saveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutes)).BeginInit();
@@ -210,7 +211,7 @@ namespace Stream_Counter
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.minutesRadio);
             this.panel1.Controls.Add(this.hoursRadio);
-            this.panel1.Location = new System.Drawing.Point(9, 115);
+            this.panel1.Location = new System.Drawing.Point(12, 115);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 100);
@@ -232,10 +233,10 @@ namespace Stream_Counter
             // 
             // endingTitle
             // 
-            this.endingTitle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endingTitle.Location = new System.Drawing.Point(9, 246);
+            this.endingTitle.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endingTitle.Location = new System.Drawing.Point(12, 246);
             this.endingTitle.Name = "endingTitle";
-            this.endingTitle.Size = new System.Drawing.Size(363, 23);
+            this.endingTitle.Size = new System.Drawing.Size(360, 26);
             this.endingTitle.TabIndex = 13;
             // 
             // label5
@@ -259,7 +260,7 @@ namespace Stream_Counter
             this.timeLeft.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLeft.Location = new System.Drawing.Point(0, 0);
             this.timeLeft.Name = "timeLeft";
-            this.timeLeft.Size = new System.Drawing.Size(363, 34);
+            this.timeLeft.Size = new System.Drawing.Size(360, 34);
             this.timeLeft.TabIndex = 16;
             this.timeLeft.Text = "Time left: 00:00";
             this.timeLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,17 +269,29 @@ namespace Stream_Counter
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.Controls.Add(this.timeLeft);
-            this.panel3.Location = new System.Drawing.Point(9, 330);
+            this.panel3.Location = new System.Drawing.Point(12, 375);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(363, 34);
+            this.panel3.Size = new System.Drawing.Size(360, 34);
             this.panel3.TabIndex = 17;
             // 
-            // Form1
+            // saveBtn
+            // 
+            this.saveBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Location = new System.Drawing.Point(104, 328);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(174, 35);
+            this.saveBtn.TabIndex = 18;
+            this.saveBtn.Text = "Open Settings";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(384, 371);
+            this.ClientSize = new System.Drawing.Size(384, 421);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.endingTitle);
@@ -291,9 +304,9 @@ namespace Stream_Counter
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(400, 410);
-            this.MinimumSize = new System.Drawing.Size(400, 410);
-            this.Name = "Form1";
+            this.MaximumSize = new System.Drawing.Size(400, 460);
+            this.MinimumSize = new System.Drawing.Size(400, 460);
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stream Counter";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -330,6 +343,7 @@ namespace Stream_Counter
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label timeLeft;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button saveBtn;
     }
 }
 
