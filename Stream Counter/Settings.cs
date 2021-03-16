@@ -18,8 +18,9 @@ namespace Stream_Counter
         public void Settings_Load(object sender, EventArgs e)
         {
             string path = Directory.GetCurrentDirectory();
-            pathText.Text = path;
-            pathLocation = path;
+            var output = readFromFile();
+            pathText.Text = output.directory;
+            pathLocation = output.directory;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -30,8 +31,9 @@ namespace Stream_Counter
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            var output = readFromFile();
-            pathText.Text = output.directory;
+            pathText.Text = Directory.GetCurrentDirectory();
+            pathLocation = Directory.GetCurrentDirectory();
+            saveToFile();
         }
 
         private void folderBtn_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace Stream_Counter
             }
         }
 
-        private void saveToFile()
+        public void saveToFile()
         {
             settingsFile file = new settingsFile();
             file.directory = pathLocation;

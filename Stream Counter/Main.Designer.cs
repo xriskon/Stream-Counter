@@ -309,6 +309,7 @@ namespace Stream_Counter
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stream Counter";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutes)).EndInit();
